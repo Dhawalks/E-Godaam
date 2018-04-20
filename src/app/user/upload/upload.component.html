@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>Please provide following details to upload data!</h2>
+  <hr>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+            <select name="type" id="type" class="form-control" ngModel>
+                <!-- <option value="type" class="form-control">Please select a type</option> -->
+                <option value="images"class="form-control">Image</option>
+                <option value="videos" class="form-control">Video</option>
+                <option value="documents" class="form-control">Document</option>
+                <option value="others" class="form-control">Other</option>
+              </select>
+        </div>
+        
+          <!-- <label for="Name"><h4>Name of file.</h4></label>
+          <input type="text" class="form-control " placeholder="Name" ngModel> -->
+        
+        
+          <input type="file" name = "file" class="form-control "
+          (change)="onFileSelected($event)" ngModel>
+          <br>
+          <button type="submit" class="btn btn-success">Upload</button>
+      </div>
+    </div>
+  </form>
+  
+</div>

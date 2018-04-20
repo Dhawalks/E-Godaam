@@ -3,32 +3,27 @@
     <div class="col-sm-3, col-md-2, sidebar">
       <ul class="nav nav-sidebar">
         <li>
-          <a routerLink="/user/1/overview" routerLinkActive="active">Overview</a>
+          <a routerLink="/user/1/overview" routerLinkActive="active" style="cursor: pointer;">Overview</a>
+        </li>
+        <!-- <li>
+          <a routerLink="/user/1/profile" routerLinkActive="active" style="cursor: pointer;">Profile</a>
+        </li>-->
+        <li>
+          <a routerLink="/user/1/images" routerLinkActive="active" style="cursor: pointer;">Images</a>
         </li>
         <li>
-          <a routerLink="/user/1/profile" routerLinkActive="active">Profile</a>
+          <a routerLink="/user/1/videos" routerLinkActive="active" style="cursor: pointer;">Videos</a>
         </li>
         <li>
-          <a routerLink="/user/1/images" routerLinkActive="active">Images</a>
+          <a routerLink="/user/1/documents" routerLinkActive="active" style="cursor: pointer;">Documents</a>
         </li>
         <li>
-          <a routerLink="/user/1/videos" routerLinkActive="active">Videos</a>
-        </li>
-        <li>
-          <a routerLink="/user/1/documents" routerLinkActive="active">Documents</a>
-        </li>
-        <li>
-          <a routerLink="/user/1/others" routerLinkActive="active">Others</a>
+          <a routerLink="/user/1/others" routerLinkActive="active" style="cursor: pointer;">Others</a>
         </li>
       </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-      <div class="row">
-        <h1 class="page-header" style="color:blue">DASHBOARD</h1>
-      </div>
-        <div class="col-sm-9">
-          <router-outlet></router-outlet>
-      </div>
-
+        <router-outlet></router-outlet>
     </div>
+  </div>
   </div>

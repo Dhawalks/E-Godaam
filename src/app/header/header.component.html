@@ -14,7 +14,13 @@
           <li><a href="#aboutUs">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contactus">Contact Us</a></li>
-          <li><a routerLink="/login">Login</a></li>
+          <li class="dropdown" appDropdown>
+              <a style="cursor: pointer;" class="dropdown-toggle" role="button" data-toggle="dropdown">User<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a style="cursor: pointer;" routerLink="/login">Login</a></li>
+                <li><a style="cursor: pointer;" routerLink="/signup">SignUp</a></li>
+              </ul>
+            </li>
         </ul>
       </div>
     </div>

@@ -10,21 +10,29 @@ import { ImagesComponent } from './user/images/images.component';
 import { VideosComponent } from './user/videos/videos.component';
 import { DocumentsComponent } from './user/documents/documents.component';
 import { OthersComponent } from './user/others/others.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { EditprofileComponent } from './user/profile/editprofile/editprofile.component';
+import { UploadComponent } from './user/upload/upload.component';
+import { AuthGuard } from './authentication/auth-guard.service';
 
 
 const appRoutes: Routes = [
     {path:'', component:HomeComponent},
     {path:"home", component:HomeComponent},
-  {path:"login", component:LoginComponent},
-  {path:"signup", component:SignupComponent},
-  {path:"user", component:UserComponent, children:[
-    {path:":id/profile", component:ProfileComponent},
-    {path: ":id/overview", component:OverviewComponent},
-    {path:":id/images", component:ImagesComponent},
-    {path:":id/videos", component:VideosComponent},
-    {path:":id/documents", component:DocumentsComponent},
-    {path:":id/others", component:OthersComponent}
+    {path:"login", component:LoginComponent},
+    {path:"signup", component:SignupComponent},
+    {path:"user", component:UserComponent, children:[
+      {path:":id/profile", component:ProfileComponent, canActivate:[AuthGuard]},
+      {path: ":id/overview", component:OverviewComponent, canActivate:[AuthGuard]},
+      {path:":id/images", component:ImagesComponent, canActivate:[AuthGuard]},
+      {path:":id/videos", component:VideosComponent, canActivate:[AuthGuard]},
+      {path:":id/documents", component:DocumentsComponent, canActivate:[AuthGuard]},
+      {path:":id/others", component:OthersComponent, canActivate:[AuthGuard]},
+      {path:":id/edit", component:EditprofileComponent, canActivate:[AuthGuard]},
+      {path:":id/upload", component:UploadComponent, canActivate:[AuthGuard]}
   ]},
+    {path:"not-found", component:NotFoundComponent},
+    {path:"**", redirectTo:"not-found"}
   ];
 
 @NgModule({

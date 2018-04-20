@@ -1,3 +1,17 @@
-<p>
-  others works!
-</p>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Documents</h2>
+        <hr>
+        <button class="btn btn-danger" (click)="onUpload()">Upload!</button>
+        <br>
+        <div class="row">
+            <div class="col-sm-3" *ngFor="let image of files">
+              <a [href]=image target="blank">
+                <img src="../../../assets/DOCUMENTS.png" class="img-responsive img-thumbnail">
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

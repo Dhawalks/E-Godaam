@@ -1,5 +1,16 @@
 <div class="row">
-    <div class="col-sm-3" *ngFor="let video of videos">
-      <img [src]="video" class="img-responsive img-thumbnail">
-    </div>
+  <div class="col-xs-12">
+    <h2>Videos.</h2>
   </div>
+</div>
+<hr>
+<button class="btn btn-danger" (click)="onUpload()">Upload!</button>
+<br>
+<br>
+<div class="row">
+  <div class="col-sm-3" *ngFor="let video of files">
+    <a [href]=video target="blank">
+      <video [src]="video" width="320" height="240" type="video/mp4" controls></video>
+    </a>
+  </div>
+</div>
